@@ -9,7 +9,7 @@ class City:
         self.lon = lon
 
     def __str__(self):
-        return f"City: {self.name}        Lat: {self.lat}        Lon: {self.lon}\n"
+        return f"{self.name}, {self.lat}, {self.lon}"
 
 
 # We have a collection of US cities with population over 750,000 stored in the
@@ -38,7 +38,7 @@ def cityreader(cities=[]):
         for row in cityreader:
             city_instance = ','.join(row).split(",")
             cities.append(
-                City(city_instance[0], city_instance[3], city_instance[4]))
+                City(city_instance[0], float(city_instance[3]), float(city_instance[4])))
 
     return cities
 
